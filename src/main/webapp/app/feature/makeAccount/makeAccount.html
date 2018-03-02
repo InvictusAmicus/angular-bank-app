@@ -1,0 +1,18 @@
+<div ng-controller="makeAccountController as makeAccCtrl">
+	
+	<h4>First Name: 
+	<input type= "text" ng-model = "makeAccCtrl.fName"></input>
+	</h4>
+	<h4>Last Name: 
+	<input type= "text" ng-model = "makeAccCtrl.lName"></input>
+	</h4>
+	<h4>Account Number: 
+	<input type= "text" ng-model = "makeAccCtrl.accNo"></input>
+	</h4>
+	<button ng-click="makeAccCtrl.submit()">Submit</button>
+	
+	{{makeAccCtrl.fName + " " + makeAccCtrl.lName + " " + makeAccCtrl.accNo}}
+	
+	
+	
+</div>

@@ -8,6 +8,7 @@
             return {
 
                 GET: function (apiPath) {
+                	$log.log("Dal get");
                     var deferred = $q.defer();
                     $http.get(apiPath).then(function (result) {
                         deferred.resolve(result.data);
@@ -18,6 +19,8 @@
                 },
 
                 POST: function (apiPath, itemToSave) {
+                	$log.log("post method");
+                 	$log.log(itemToSave);
                     var deferred = $q.defer();
                     $http(
                         {
@@ -28,6 +31,7 @@
                                 "Content-Type": "application/json;charset=UTF-8"
                             },
                             data: JSON.stringify(itemToSave)
+                           
                         }
                     ).then(function (results) {
                             deferred.resolve(results.data);

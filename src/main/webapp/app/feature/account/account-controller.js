@@ -2,8 +2,9 @@
 
 (function() {
 
-    var AccountController =  function(accountService, $log) {
+    var AccountController =  function(accountService, $state, $log) {
         
+        $log.log("Account Controller Created");
     	var vm = this;
         
         vm.isHidden = false;
@@ -25,8 +26,14 @@
        }
        
        init();
+       
+        vm.updateRecord = function()
+        {
+        	$log.log("go to update");
+        	$state.go('updateAccount');
+        };
             
     };
 
-    angular.module('accountApp').controller('accountController', ['accountService','$log', AccountController]);
+    angular.module('accountApp').controller('accountController',   ['accountService','$state','$log', AccountController]);
 }());

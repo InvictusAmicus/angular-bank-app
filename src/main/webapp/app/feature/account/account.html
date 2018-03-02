@@ -9,14 +9,19 @@
         			<th>{{'first_name' | uppercase}}</th>
         			<th>{{'surname' | uppercase}}</th>
         			<th>{{'account_number' | uppercase}}</th>
+        			<th>why</th>
+        			<th>1</th>
         		</tr>
         		<tr ng-repeat="account in accountCtrl.accounts">
         			<td>{{account.firstName}}</td>
         			<td>{{account.secondName}}</td>
         			<td>{{account.accountNumber}}</td>
+        			<td><button ng-click="accountCtrl.updateRecord(account)">Edit</button></td>
+        			<td><button ng-click="accountCtrl.deleteRecord(account)">Delete</button></td>
+        			
         		</tr>
         	</table>
         </div>
-        <button class="btn"ng-click="accountCtrl.hideTable()">Hide accounts</button>
+        <button class="btn" ng-click="accountCtrl.hideTable()">Hide accounts</button>
 	</div>
 </div>

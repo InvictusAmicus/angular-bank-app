@@ -46,6 +46,21 @@ public class AccountDBRepository implements AccountRepository {
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
 
+	@Transactional(REQUIRED)
+	public String updateAccount(Long id, String accountToUpdate) {
+		LOGGER.info("AccountDBRepository updateAccount ----");
+		Account updatedAccount = util.getObjectForJSON(accountToUpdate, Account.class);
+		Account accountFromDB = findAccount(id);
+		if (accountToUpdate != null) {
+			accountFromDB.setFirstName(updatedAccount.getFirstName());
+			accountFromDB.setSecondName(updatedAccount.getSecondName());
+			accountFromDB.setAccountNumber(updatedAccount.getAccountNumber());
+			
+			manager.merge(accountFromDB);
+		}
+		return "{\"message\": \"account sucessfully updated\"}";
+	}
+	
 	@Override
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {

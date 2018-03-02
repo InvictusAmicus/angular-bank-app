@@ -1,0 +1,18 @@
+<div ng-controller="updateAccountController as updateAccCtrl">
+	<h2>Update Account</h2>
+	<h4>First Name: 
+	<input type= "text" ng-model = "updateAccCtrl.fName"></input>
+	</h4>
+	<h4>Last Name: 
+	<input type= "text" ng-model = "updateAccCtrl.lName"></input>
+	</h4>
+	<h4>Account Number: 
+	<input type= "text" ng-model = "updateAccCtrl.accNo"></input>
+	</h4>
+	<button ng-click="updateAccCtrl.submit()">Confirm Update</button>
+	
+	{{updateAccCtrl.fName + " " + updateAccCtrl.lName + " " + updateAccCtrl.accNo}}
+	
+	
+	
+</div>
