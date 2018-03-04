@@ -27,12 +27,19 @@
        
        init();
        
-        vm.updateRecord = function()
-        {
-        	$log.log("go to update");
-        	$state.go('updateAccount');
-        };
-            
+       vm.updateRecord = function(account)
+       {
+       	$log.log("go to update");
+       	$state.go('updateAccount');
+       };
+       
+       vm.deleteRecord = function(account)
+       {
+    	   $log.log("delete method");
+    	   accountService.deleteAccount(account);
+    	   location.reload();
+       };
+       
     };
 
     angular.module('accountApp').controller('accountController',   ['accountService','$state','$log', AccountController]);

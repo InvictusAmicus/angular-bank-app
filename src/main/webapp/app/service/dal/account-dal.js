@@ -20,8 +20,10 @@
         this.updateAccount = function (accountToUpdate) {
         
         	$log.log("AccountDal updateAccount");
-        	$log.log(accountToUpdate);
-            return dal.http.PUT("http://localhost:8080/customer-app/rest/account/json"+ accountToUpdate.id, accountToUpdate);
+        	$log.log("account: " +accountToUpdate);
+        	$log.log("account id: " + accountToUpdate.id);
+        	
+            return dal.http.PUT("rest/account/json/"+accountToUpdate.id, accountToUpdate);
         };
 
         this.deleteAccount = function (accountToDelete) {
